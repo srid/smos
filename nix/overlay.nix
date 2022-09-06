@@ -61,7 +61,7 @@ in
             testTarget = (old.testTarget or "") + " --show-details=direct";
           }
         );
-      smosPkg = name: buildStrictly (ownPkg name (final.gitignoreSource (../. + "/${name}")));
+      smosPkg = name: buildStrictly (ownPkg name ((../. + "/${name}")));
       smosPkgWithComp =
         exeName: name:
         generateOptparseApplicativeCompletion exeName (smosPkg name);
